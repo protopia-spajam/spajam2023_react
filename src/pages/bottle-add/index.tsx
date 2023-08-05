@@ -3,6 +3,7 @@ import { QrCodeReader } from "components/qr-reader";
 import React, { FC, useEffect, useRef, useState } from "react";
 import { Title } from "ui/molecules/title";
 import { useNavigate } from "react-router-dom";
+import "./index.scss";
 
 export const BottleAdd = () => {
   const [qrCodes, setQrCodes] = useState("");
@@ -11,8 +12,13 @@ export const BottleAdd = () => {
 
   return (
     <div className="BottleAdd">
-      <Title>Add Friends Bottle</Title>
-      <Text size="title">{"QRコードを読み取って友達のボトルを集めよう"}</Text>
+      <div className="title">Add Friends Bottle</div>
+      <div
+        onClick={() => {
+          navigation("/");
+        }}
+      ></div>
+      <h2>{"QRコードを読み取って友達のボトルを集めよう"}</h2>
       <QrCodeReader
         onReadQRCode={(result) => {
           const newQrCode = result.getText();

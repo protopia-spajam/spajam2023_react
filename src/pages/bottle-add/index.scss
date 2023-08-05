@@ -1,0 +1,16 @@
+@use "assets/scss/config/variables" as var;
+.BottleAdd {
+    
+    .title {
+      font-size: 30px;
+      text-align: center;
+      font-weight: bold;
+      color: var.$WHITE000;
+      padding: 10px;
+      margin: {
+        bottom: 5px;
+      }
+      background-image: url("../../assets/image/coffee2.jpg");
+      background-size: cover;
+    }
+}
