@@ -1,0 +1,18 @@
+@use "assets/scss/config/variables" as var;
+
+.MyBottleIcon {
+  width: 50vw;
+  margin: 0 auto;
+  img {
+    width: 100%;
+  }
+}
+
+.MenuCard {
+  width: 100%;
+  height: 100px;
+  margin: {
+    top: 10px;
+  }
+  background: var.$PRIMARYCOLOR;
+}
