@@ -1,9 +1,19 @@
 @use "assets/scss/config/variables" as var;
 
 .MyBottleIcon {
-  width: 50vw;
+  width: 170px;
+  height: 170px;
+  border-radius: 85px;
+  background: var.$GRAY600;
   margin: 0 auto;
+  padding: 5px;
+  svg {
+    width: 160px;
+    position: absolute;
+    fill: white;
+  }
   img {
+    position: absolute;
     width: 100%;
   }
 }

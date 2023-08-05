@@ -1,6 +1,7 @@
 import { Text } from "ui/atoms/text";
 import { Title } from "ui/molecules/title";
 import Tumbler from "assets/image/tumbler.png";
+import { MyBottleBatch } from "assets/image/mybottle";
 import "./index.scss";
 import { useNavigate } from "react-router-dom";
 
@@ -19,6 +20,7 @@ export const Home = () => {
 const MyBottleIcon = () => {
   return (
     <div className="MyBottleIcon">
+      <MyBottleBatch />
       <img src={Tumbler} alt="Tumbler" />
     </div>
   );

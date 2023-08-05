@@ -1,0 +1,19 @@
+@use "assets/scss/config/variables" as var;
+
+.LeadButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+  max-width: 350px;
+  height: 55px;
+  margin: 20px auto;
+  border-radius: 10px;
+  background: var.$SECONDARY200;
+  color: var.$WHITE000;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  cursor: pointer;
+}

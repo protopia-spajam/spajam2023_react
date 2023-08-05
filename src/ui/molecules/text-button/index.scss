@@ -1,0 +1,59 @@
+@use "assets/scss/config/variables" as var;
+
+.TextButton {
+  letter-spacing: 0.1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+  position: relative;
+  &.default {
+    background: rgba($color: #ffffff, $alpha: 0.5);
+    border: 1px solid var.$GRAY600;
+    color: var.$GRAY800;
+    padding: 2px 15px;
+    &:hover {
+      background: rgba($color: #000000, $alpha: 0.05);
+    }
+    // &.active {
+    //   background: rgba($color: #000000, $alpha: 0.05);
+    // }
+    &.disable {
+      color: var.$GRAY700;
+      background: rgba($color: #000000, $alpha: 0.05);
+      cursor: default;
+    }
+  }
+  &.white,
+  &.black {
+    padding: 7px 25px;
+    border: 1px solid var.$GRAY400;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  &.white {
+    background: var.$WHITE000;
+    color: var.$GRAY800;
+  }
+  &.black {
+    background: var.$GRAY800;
+    color: var.$WHITE000;
+    &.disable {
+      color: var.$GRAY700;
+      background: rgba($color: #000000, $alpha: 0.25);
+      cursor: default;
+      &:hover {
+        transform: scale(1);
+      }
+    }
+  }
+  &.icon {
+    padding: {
+      left: 40px;
+    }
+  }
+  .button-icon {
+    position: absolute;
+    left: 10px;
+  }
+}
