@@ -16,7 +16,7 @@ export const Home = () => {
   return (
     <>
       <div className="Home">
-        <div className={"title-logo"}>My Bottle</div>
+        <div className={"title-logo"}>MY BOTTLE</div>
         <div
           className="profile-container"
           onClick={() => {

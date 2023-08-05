@@ -13,6 +13,7 @@ import Tumb4 from "assets/image/tumb4.png";
 import Tumb5 from "assets/image/tumb5.png";
 import { ChevronLeft } from "react-feather";
 import { useNavigate } from "react-router";
+import { TitleBar } from "ui/molecules/title-bar";
 
 export const Collection = () => {
   const navigation = useNavigate();
@@ -65,14 +66,7 @@ export const Collection = () => {
   ];
   return (
     <div className="Collection">
-      <div className="title">Collection</div>
-      <div
-        onClick={() => {
-          navigation("/");
-        }}
-      >
-        <ChevronLeft />
-      </div>
+      <TitleBar content={"COLLECTION"} />
       <Grid
         list={collection.map((col, index) => (
           <CollectionIcon

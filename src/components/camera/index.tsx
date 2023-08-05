@@ -32,7 +32,7 @@ export const Camera = () => {
             />
           </div>
           <div className="capture-button" onClick={capture}>
-            <div></div>
+            <div className="shutter"></div>
           </div>
         </>
       ) : (

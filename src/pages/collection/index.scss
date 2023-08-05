@@ -3,18 +3,6 @@
 .Collection {
   background: var.$GRAY300;
   height: 100vh;
-  .title {
-    font-size: 30px;
-    text-align: center;
-    font-weight: bold;
-    color: var.$WHITE000;
-    padding: 10px;
-    margin: {
-      bottom: 5px;
-    }
-    background-image: url("../../assets/image/coffee1.jpg");
-    background-size: cover;
-  }
   .CollectionIcon {
     width: 30%;
     height: 180px;
