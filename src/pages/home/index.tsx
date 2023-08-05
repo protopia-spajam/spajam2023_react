@@ -5,15 +5,16 @@ import { MyBottleBatch } from "assets/image/mybottle";
 import "./index.scss";
 import { useNavigate } from "react-router-dom";
 import classNames from "classnames";
+import { BottleBadge } from "components/bottle-badge";
 
 export const Home = () => {
   return (
     <div className="Home">
       <div className={"title-logo"}>My Bottle</div>
       <div className="profile-container">
-        <MyBottleIcon />
+        <BottleBadge color={"#401f1e"} />
         <div className="profile">
-          <div>かたやま　ゆうや</div>
+          <div>Katayama Yuya</div>
           <div>
             <span>15</span>
           </div>

@@ -3,25 +3,37 @@ import "./index.scss";
 import Tumbler from "assets/image/tumbler.svg";
 import { Title } from "ui/molecules/title";
 import { Grid } from "ui/atoms/grid";
+import { BottleBadge } from "components/bottle-badge";
 
 export const Collection = () => {
-  const collection = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const collection = [
+    { name: "keito", color: "#b0c4de" },
+    { name: "しの", color: "#8fbc8f" },
+    { name: "あみでぃ", color: "#deb887" },
+    { name: "nishi", color: "#ffa500" },
+    { name: "うっちー", color: "#808000" },
+    { name: "加藤", color: "#db7093" },
+    { name: "りか", color: "#696969" },
+    { name: "タムタム", color: "#5f9ea0" },
+    { name: "justin", color: "#d2b48c" },
+  ];
   return (
     <div className="Collection">
-      <Title>Collection</Title>
+      <div className="title">Collection</div>
       <Grid
-        list={collection.map((_, index) => (
-          <CollectionIcon key={index} />
+        list={collection.map((col, index) => (
+          <CollectionIcon key={index} name={col.name} color={col.color} />
         ))}
       />
     </div>
   );
 };
 
-const CollectionIcon = () => {
+const CollectionIcon = ({ name, color }: { name: string; color: string }) => {
   return (
     <div className="CollectionIcon">
-      <img src={Tumbler} alt="Tumbler" />
+      <BottleBadge color={color} />
+      <div className="name">{name}</div>
     </div>
   );
 };

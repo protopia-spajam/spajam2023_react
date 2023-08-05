@@ -1,6 +1,43 @@
-.CollectionIcon {
-  width: 30%;
-  text-align: center;
-  background: red;
-  margin: 5px;
+@use "assets/scss/config/variables" as var;
+
+.Collection {
+  background: var.$GRAY300;
+  height: 100vh;
+  .title {
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: var.$WHITE000;
+    padding: 10px;
+    margin: {
+      bottom: 5px;
+    }
+    background-image: url("../../assets/image/coffee1.jpg");
+    background-size: cover;
+  }
+  .CollectionIcon {
+    width: 30%;
+    height: 180px;
+    border-radius: 10px;
+    text-align: center;
+    background: var.$GRAY300;
+    margin: 5px;
+    position: relative;
+    box-shadow: 0px 0px 5px var.$GRAY800;
+    .BottleBadge {
+      transform: scale(0.6);
+      margin: {
+        top: -23px;
+        left: -23px;
+      }
+    }
+    .name {
+      font-size: 20px;
+      font-weight: bold;
+      position: absolute;
+      bottom: 20px;
+      text-align: center;
+      width: 100%;
+    }
+  }
 }

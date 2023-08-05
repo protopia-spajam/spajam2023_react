@@ -1,0 +1,12 @@
+@use "assets/scss/config/variables" as var;
+
+.Container {
+  margin: 25px 10px;
+  border: 0.5px solid var.$BORDER;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px var.$SHADOW;
+  background: var.$WHITE;
+  &.tapable {
+    cursor: pointer;
+  }
+}
