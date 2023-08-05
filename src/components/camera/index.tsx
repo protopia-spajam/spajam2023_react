@@ -1,4 +1,4 @@
-import { useRef, useState, useCallback } from "react";
+import React, { useRef, useState, useCallback } from "react";
 import Webcam from "react-webcam";
 import "./index.scss";
 
@@ -8,18 +8,31 @@ const videoConstraints = {
   facingMode: "user",
 };
 
-export const Camera = () => {
+interface CameraProps {
+  handleImageAdd: (url: string) => void;
+}
+
+export const Camera: React.FC<CameraProps> = (props) => {
   const webcamRef = useRef<Webcam>(null);
   const [url, setUrl] = useState<string | null>(null);
+
   const capture = useCallback(() => {
     const imageSrc = webcamRef.current?.getScreenshot();
     if (imageSrc) {
       setUrl(imageSrc);
     }
   }, [webcamRef]);
+
+  const addImage = () => {
+    if (url) {
+      props.handleImageAdd(url);
+      setUrl(null);
+    }
+  };
+
   return (
     <div className="Camera">
-      {!!!url ? (
+      {!url ? (
         <>
           <div className="webcam">
             <Webcam
@@ -41,6 +54,7 @@ export const Camera = () => {
             <img src={url} alt="Screenshot" />
           </div>
           <div>
+            
             <button
               onClick={() => {
                 setUrl(null);
@@ -48,6 +62,7 @@ export const Camera = () => {
             >
               削除
             </button>
+            <button onClick={addImage}>追加</button>
           </div>
         </>
       )}

@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 export const BottleAdd = () => {
   const [qrCodes, setQrCodes] = useState("");
+  const [cameraActive, setCameraActive] = useState(true); // 追加: カメラの状態を管理
   const navigation = useNavigate();
 
   return (
@@ -14,16 +15,17 @@ export const BottleAdd = () => {
       <Text size="title">{"QRコードを読み取って友達のボトルを集めよう"}</Text>
       <QrCodeReader
         onReadQRCode={(result) => {
-          setQrCodes((codes) => {
-            return result.getText();
-          });
+          const newQrCode = result.getText();
+          if (newQrCode !== qrCodes) {
+            setQrCodes(newQrCode);
+          }
         }}
       />
       <div className="next">
         {qrCodes !== "" ? (
           <button
             onClick={() => {
-              navigation(`/home`);
+              navigation(`/collection`);
             }}
           >
             次へ
