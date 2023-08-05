@@ -1,0 +1,31 @@
+@use "assets/scss/config/variables" as var;
+
+.BottleBadge {
+  width: 170px;
+  height: 170px;
+  border-radius: 85px;
+  // background: var.$GRAY600;
+  margin: {
+    left: 5px;
+  }
+  padding: 5px;
+  position: relative;
+  svg {
+    width: 160px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    fill: white;
+  }
+  img {
+    position: absolute;
+    top: 39px;
+    left: 60px;
+    width: 50px;
+    &.image {
+      width: 120px;
+      top: 25px;
+      left: 25px;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@use "assets/scss/config/variables" as var;
+
+.BadgeModal {
+  padding: 20px;
+  position: relative;
+  text-align: center;
+  height: 300px;
+  .badge {
+    transition: 0.3s;
+    position: absolute;
+    top: 30px;
+    left: 90px;
+  }
+  .active {
+    opacity: 1;
+  }
+  .inActive {
+    opacity: 0;
+  }
+  .BottleBadge {
+    margin: 0 auto;
+  }
+  .comment1 {
+    font-size: 20px;
+    position: absolute;
+    bottom: 50px;
+    width: 85%;
+    font-weight: bold;
+    color: var.$GRAY900;
+  }
+  .comment2 {
+    font-size: 20px;
+    position: absolute;
+    bottom: 15px;
+    width: 85%;
+    font-weight: bold;
+    color: var.$GRAY900;
+  }
+}
