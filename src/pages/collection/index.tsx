@@ -1,6 +1,6 @@
 import { Text, TextSizes } from "ui/atoms/text";
 import "./index.scss";
-import Tumbler from "assets/image/tumbler.png";
+import Tumbler from "assets/image/tumbler.svg";
 import { Title } from "ui/molecules/title";
 import { Grid } from "ui/atoms/grid";
 

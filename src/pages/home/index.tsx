@@ -1,18 +1,32 @@
-import { Text } from "ui/atoms/text";
+import { Text, TextSizes } from "ui/atoms/text";
 import { Title } from "ui/molecules/title";
-import Tumbler from "assets/image/tumbler.png";
+import Tumbler from "assets/image/tumbler.svg";
 import { MyBottleBatch } from "assets/image/mybottle";
 import "./index.scss";
 import { useNavigate } from "react-router-dom";
+import classNames from "classnames";
 
 export const Home = () => {
   return (
     <div className="Home">
-      <Title>My Bottle</Title>
-      <MyBottleIcon />
-      <MenuCard content="Collection" path="collection" />
-      <MenuCard content="Add Friend Bottle" path="bottle-add" />
-      <MenuCard content="My Bottle ID" path="my-qr" />
+      <div className={"title-logo"}>My Bottle</div>
+      <div className="profile-container">
+        <MyBottleIcon />
+        <div className="profile">
+          <div>かたやま　ゆうや</div>
+          <div>
+            <span>15</span>
+          </div>
+          <div>collection</div>
+        </div>
+      </div>
+      <MenuCard content="Collection" path="collection" className="collection" />
+      <MenuCard
+        content="Add Friend Bottle"
+        path="bottle-add"
+        className="bottle-add"
+      />
+      <MenuCard content="My Bottle ID" path="my-qr" className="my-qr" />
     </div>
   );
 };
@@ -26,16 +40,26 @@ const MyBottleIcon = () => {
   );
 };
 
-const MenuCard = ({ content, path }: { content: string; path: string }) => {
+const MenuCard = ({
+  content,
+  path,
+  className,
+}: {
+  content: string;
+  path: string;
+  className: string;
+}) => {
   const navigation = useNavigate();
+  const classes = classNames(["MenuCard", className]);
   return (
     <div
-      className="MenuCard"
+      className={classes}
       onClick={() => {
         navigation(`/${path}`);
       }}
     >
-      <Text size="title">{content}</Text>
+      <div className="content">{content}</div>
+      <img src={Tumbler} alt="Tumbler" />
     </div>
   );
 };
