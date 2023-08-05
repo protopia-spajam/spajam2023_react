@@ -5,10 +5,10 @@ import { LeadButton } from "ui/molecules/lead-button";
 import FlatDesign from "assets/image/flat.svg";
 import { Camera } from "components/camera"; // Camera コンポーネントのパスを適切に指定してください
 import "./index.scss";
-import TextInput from "ui/atoms/input";
-import { TextButton } from "ui/molecules/text-button";
+// import TextInput from "ui/atoms/input";
 import { useNavigate } from "react-router-dom";
 import Color from "color-thief-react";
+import { TextForm } from "ui/molecules/text-form";
 
 export const MyBottle: React.FC = () => {
   return (
@@ -28,6 +28,7 @@ const CaptureBottleImage: React.FC = () => {
     setUrl(newUrl);
     setNumberDisplayPage(3); // ページを 3 に切り替える
   };
+  const [nickname, setNickname] = useState("");
 
   switch (numberDisplayPage) {
     case 1:
@@ -50,26 +51,31 @@ const CaptureBottleImage: React.FC = () => {
     case 2:
       return (
         <>
+          <div className="my-bottle-comment">マイボトルを撮影してください</div>
           <Camera handleImageAdd={handleUrlChange} />
         </>
       );
     case 3:
       return (
         <>
-          <TextInput
+          {/* <TextInput
             value={name}
             onChange={(newValue) => setName(newValue)}
             label={""}
+          /> */}
+          <TextForm
+            type="text"
+            value={nickname}
+            placeholder="ニックネームを入力してください"
+            onChange={setNickname}
           />
-          <TextButton value={"次へ"} onClick={() => navigation(`/`)} />
+          <LeadButton value={"次へ"} onClick={() => navigation(`/`)} />
           <Color src={url} format="hex">
             {({ data, loading, error }) => {
               if (data) {
                 setPredominantColor(data);
               }
-              return (
-                <div style={{ color: predominantColor }}></div>
-              );
+              return <div style={{ color: predominantColor }}></div>;
             }}
           </Color>
         </>

@@ -1,6 +1,9 @@
 import React, { useRef, useState, useCallback } from "react";
 import Webcam from "react-webcam";
 import "./index.scss";
+import { TextButton } from "ui/molecules/text-button";
+import { LeadButton } from "ui/molecules/lead-button";
+import { Text, TextSizes } from "ui/atoms/text";
 
 const videoConstraints = {
   width: 720,
@@ -51,18 +54,17 @@ export const Camera: React.FC<CameraProps> = (props) => {
       ) : (
         <>
           <div>
-            <img src={url} alt="Screenshot" />
+            <img src={url} alt="Screenshot" className="result" />
           </div>
-          <div>
-            
-            <button
+          <div className="button-container">
+            <LeadButton value={"次へ進む"} onClick={addImage} />
+            <LeadButton
+              value={"撮り直す"}
               onClick={() => {
                 setUrl(null);
               }}
-            >
-              削除
-            </button>
-            <button onClick={addImage}>追加</button>
+              className={"gray"}
+            />
           </div>
         </>
       )}

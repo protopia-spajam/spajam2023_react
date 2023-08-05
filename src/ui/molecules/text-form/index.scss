@@ -1,0 +1,21 @@
+@use "assets/scss/config/variables" as var;
+
+.TextForm {
+  display: block;
+  width: 95%;
+  max-width: 500px;
+  height: 55px;
+  margin: 20px auto;
+  padding: 0 18px;
+  border: 1.5px solid var.$BLACK1000;
+  border-radius: 5px;
+  box-sizing: inherit;
+  outline: none;
+  box-sizing: border-box;
+  background: var.$GRAY200;
+  &.readonly {
+    border: 2px solid var.$GRAY700;
+    background: var.$GRAY300;
+    color: var.$GRAY800;
+  }
+}

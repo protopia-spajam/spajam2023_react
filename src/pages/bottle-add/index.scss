@@ -1,0 +1,10 @@
+@use "assets/scss/config/variables" as var;
+
+.BottleAdd {
+  .comment {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: var.$SECONDARY200;
+  }
+}

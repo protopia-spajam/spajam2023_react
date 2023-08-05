@@ -1,11 +1,18 @@
+@use "assets/scss/config/variables" as var;
+
 .MyBottle {
   background: black;
   text-align: center;
   .button {
     margin: 10px;
   }
+  .my-bottle-comment {
+    font-size: 24px;
+    font-weight: bold;
+    color: var.$GRAY800;
+  }
 }
 
-.MyBottle .input{
-  background:white;
+.MyBottle .input {
+  background: white;
 }
