@@ -61,14 +61,14 @@ const CaptureBottleImage: React.FC = () => {
             onChange={(newValue) => setName(newValue)}
             label={""}
           />
-          <TextButton value={"次へ"} onClick={() => navigation(`/home`)} />
+          <TextButton value={"次へ"} onClick={() => navigation(`/`)} />
           <Color src={url} format="hex">
             {({ data, loading, error }) => {
               if (data) {
                 setPredominantColor(data);
               }
               return (
-                <div style={{ color: predominantColor }}>Text with the predominant color</div>
+                <div style={{ color: predominantColor }}></div>
               );
             }}
           </Color>
